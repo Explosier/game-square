@@ -1,0 +1,16 @@
+{
+  "name": "game-square",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "dead-server --host=localhost --port=4606",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tadas Valantonis",
+  "license": "MIT",
+  "dependencies": {
+    "dead-server": "^1.0.9"
+  }
+}

@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    min-width: 518px;
+    background: rgb(253,101,61);
+    background: radial-gradient(circle, rgba(253,101,61,1) 49%, rgba(255,65,103,1) 100%);
+    user-select: none;
+}
+
+main {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.square-logo {
+    cursor: pointer;
+}
+
+.square-logo > .block {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    color: white;
+    margin: 2px;
+    font-size: 34px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-family: arial, sans-serif;
+    box-shadow: rgba(252, 194, 63, 0.66) 0px 22px 70px 4px;
+    transition-timing-function: ease-out;
+    transition: 0.3s;
+}
+
+.square-logo:hover > .block {
+    box-shadow: rgba(252, 194, 63, 0.96) 0px 30px 80px 8px;
+    transition-timing-function: ease-in;
+    transition: 0.3s;
+}
+
+.countdown {
+    height: 500px;
+    display: none;
+    place-items: center;
+    color: green;
+    font-size: 200px;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: grow;
+    text-shadow:
+    0 0 5px #fcc23f,
+    0 0 10px #fcc23f,
+    0 0 15px #fcc23f,
+    0 0 20px #fcc23f,
+    0 0 25px #fcc23f,
+    0 0 30px #fcc23f,
+    0 0 35px #fcc23f,
+    0 0 40px #fcc23f;
+}
+
+@keyframes grow {
+    from {
+      transform: scale(0.2);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
+
+#game-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-area-border {
+    border: 3px solid rgb(67,66,66);
+    border-radius: 9px;
+    padding: 3px;
+    background: rgb(67,66,66);
+    background: linear-gradient(353deg, rgba(67,66,66,1) 49%, rgba(99,96,96,1) 100%);
+}
+
+#game-area {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    position: relative;
+    background: rgb(67,66,66);
+   /* background: linear-gradient(353deg, rgba(67,66,66,1) 49%, rgba(99,96,96,1) 100%); */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 1;
+}
+
+#square {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    pointer-events:none;
+}
+
+.clicked-square {
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: glow;
+}
+
+@keyframes glow {
+    from {
+        box-shadow:
+        0 0 5px 2px #fcc23f,
+        0 0 8px 5px #fcc23f,
+        0 0 11px 7px #fcc23f;
+    }
+  
+    to {
+        box-shadow:
+        0 0 10px 4px #fcc23f,
+        0 0 16px 10px #fcc23f,
+        0 0 22px 14px #fcc23f;
+    }
+}
+
+.scoreboard-border {
+    display: none;
+    margin-top: 20px;
+    border: 3px solid rgb(67,66,66);
+    border-radius: 9px;
+    padding: 3px;
+    background: rgb(67,66,66);
+    background: linear-gradient(353deg, rgba(67,66,66,1) 49%, rgba(99,96,96,1) 100%);
+    height: 100%;
+}
+
+.scoreboard-slide-down {
+    animation-name: slideDown;
+	-webkit-animation-name: slideDown;
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+	visibility: visible !important;
+    animation-name: slideDown;
+}
+
+@keyframes slideDown {
+	0% { transform: translateY(-100%); }
+	50% { transform: translateY(8%); }
+	65% { transform: translateY(-4%); }
+	80% { transform: translateY(4%); }
+	95% { transform: translateY(-2%); }			
+	100% { transform: translateY(0%); }		
+}
+
+@-webkit-keyframes slideDown {
+	0% { -webkit-transform: translateY(-100%); }
+	50% { -webkit-transform: translateY(8%); }
+	65% { -webkit-transform: translateY(-4%); }
+	80% { -webkit-transform: translateY(4%); }
+	95% { -webkit-transform: translateY(-2%); }			
+	100% { -webkit-transform: translateY(0%); }	
+}
+
+#scoreboard {
+    height: 100px;
+    width: 480px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    border: 1px solid black;
+    background: rgb(67,66,66);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.start-game-section {
+    height: 500px;
+    display: grid;
+    place-items: center;
+}
+
+.start-game-wrapper {
+    height: 100px;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(67,66,66);
+}
+
+.input-name-wrapper {
+    position: relative;
+}
+
+.input-name-wrapper input {
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #fcc23f;
+    border-radius: 5px;
+    height: 30px;
+    width: 180px;
+    color: #eee;
+    font-size: 12px;
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+    font-size: 1.6em;
+}
+
+.input-name-wrapper label {
+    position: absolute;
+    left: 35px;
+    top: 11px;
+    padding: 0 4px;
+    color: white;
+    background-color: rgb(67,66,66);
+    transition-timing-function: ease-out;
+    transition: 0.2s;
+    pointer-events: none;
+    font-size: 1.6em;
+}
+
+.input-name-wrapper input:focus {
+    outline: #fcc23f;
+    box-shadow: rgba(252,194,63,0.12) 0px 4px 4px 0px, rgba(252,194,63,0.32) 0px 4px 8px 0px;
+}
+
+.input-name-wrapper input:not(:placeholder-shown)~label,
+.input-name-wrapper input:focus~label {
+    transform: translate(0%,-95%) scale(0.8, 0.8);
+}
+
+.statistics-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+.who-won {
+    margin-bottom: 40px;
+}
+
+.winner {
+    color: greenyellow;
+}
+
+.statistics-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#scoreboard div {
+    font-weight: 600;
+    color: #FFF;
+}
+
+#scoreboard span {
+    font-size: 1.3em;
+}
+
+#player-score {
+    color: greenyellow;
+}
+
+#computer-score {
+    color: red;
+}
+
+#current-round, #timer {
+    color: greenyellow;
+}
+
+button {
+    margin-top: 10px;
+}

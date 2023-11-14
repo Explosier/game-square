@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Square Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <div class="square-logo">SQUARE GAME</div>
+        <div id="game-container">
+            <div class="game-area-border">
+                <div id="game-area">
+                    <div id="square"></div>
+                    <div class="start-game-section" >
+                        <div class="start-game-wrapper">
+                            <div class="input-name-wrapper">
+                                <input type="text" name="input" id="player-name" placeholder=" ">
+                                <label for="input">Player name</label>
+                            </div>
+                            <button id="start-button">Start Game</button>
+                        </div>
+                    </div>
+                    <div class="statistics-section" style="display:none;">
+                        <div class="who-won"></div>
+                        <div>Game statistics:</div>
+                        <div class="statistics-wrapper"></div>
+                    </div>
+                    <div class="countdown"></div>
+                </div>
+            </div>
+            <div class="scoreboard-border">
+                <div id="scoreboard">
+                    <div><p>Player Score:</p><span id="player-score">0</span></div>
+                    <div><p>Computer Score:</p><span id="computer-score">0</span></div>
+                    <div><p>Current Round:</p><span id="current-round">1</span> / 10</div>
+                    <div><p>Timer:</p><span id="timer">30</span></div>
+                </div>
+                <button id="resume-pause-button">Start Game</button>
+            </div>
+            <button id="restart-button" style="display:none;">Restart Game</button>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
