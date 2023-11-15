@@ -100,6 +100,7 @@ main {
    /* background: linear-gradient(353deg, rgba(67,66,66,1) 49%, rgba(99,96,96,1) 100%); */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     z-index: 1;
+    cursor: crosshair;
 }
 
 #square {
@@ -107,7 +108,6 @@ main {
     width: 50px;
     height: 50px;
     position: absolute;
-    cursor: pointer;
     pointer-events:none;
 }
 
@@ -221,6 +221,7 @@ main {
     transition-timing-function: ease-in;
     transition: 0.2s;
     font-size: 1.6em;
+    margin-bottom: 15px;
 }
 
 .input-name-wrapper label {
@@ -292,5 +293,28 @@ main {
 }
 
 button {
+    padding: 10px;
     margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: linear-gradient(353deg, rgba(252,194,63,1) 0%, rgba(179,126,6,1) 100%);
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    transition: ease-in .1s;
+}
+
+button:hover {
+    box-shadow: 0 0 30px 0 rgba(255, 204, 29, .4), 0 0 30px 10px rgba(255, 204, 29, .2);
+    transform: scale(1.02);
+}
+
+button:disabled {
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    cursor: wait;
+    background: linear-gradient(353deg, rgba(67,66,66,1) 49%, rgba(99,96,96,1) 100%);
 }
